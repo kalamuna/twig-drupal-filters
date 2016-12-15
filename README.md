@@ -11,3 +11,23 @@ var twigDrupal = require('twig-drupal')
 // Add the filters to Drupal.
 twigDrupal(Twig);
 ```
+
+``` twig
+{{ 'Hello World!'|clean_id }}
+```
+
+### Filters
+
+A comprehensive list of the filters is [available here](http://www.opin.ca/en/article/twig-filters-drupal-8).
+
+- link
+- t
+- trans
+- placeholder
+- without
+- clean_class
+- clean_id
+- render
+- format_date
+- drupal_escape
+- safe_join
