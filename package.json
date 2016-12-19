@@ -1,6 +1,6 @@
 {
-  "name": "twig-drupal",
-  "version": "0.0.1",
+  "name": "twig-drupal-filters",
+  "version": "0.1.0",
   "description": "Drupal's Twig filters, implemented for Twig.js",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,10 @@
   "author": "Kalamuna (http://kalamuna.com)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^3.1.2"
+    "mocha": "^3.2.0"
   },
   "dependencies": {
-    "twig": "^0.10.1"
+    "slug": "^0.9.1",
+    "twig": "^0.10.3"
   }
 }

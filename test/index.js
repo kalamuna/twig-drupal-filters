@@ -15,4 +15,13 @@ describe('twig-drupal', function(){
     assert.equal(output, '<a href="http://google.com">Google</a>');
     done();
   });
+
+  it('should use the clean_class filter', function(done){
+    var template = twig({
+      data: "{{ value|clean_class }}"
+    });
+    var output = template.render({value: "Hello World!"});
+    assert.equal(output, 'Hello-World');
+    done();
+  });
 });

@@ -1,4 +1,5 @@
 var trans = require('./trans');
+var slug = require('slug')
 
 module.exports = {
   'link': require('./link'),
@@ -6,8 +7,8 @@ module.exports = {
   'trans': trans,
   'placeholder': trans,
   'without': trans,
-  'clean_class': trans,
-  'clean_id': trans,
+  'clean_class': slug,
+  'clean_id': slug,
   'render': trans,
   'format_date': trans,
   'drupal_escape': require('./drupal_escape'),
