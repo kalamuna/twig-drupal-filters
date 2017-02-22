@@ -1,6 +1,6 @@
 {
   "name": "twig-drupal-filters",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Drupal's Twig filters, implemented for Twig.js",
   "main": "index.js",
   "scripts": {

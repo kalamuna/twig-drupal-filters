@@ -28,6 +28,8 @@ A comprehensive list of the filters is [available here](http://www.opin.ca/en/ar
 - clean_class
 - clean_id
 - render
+- path
+- url
 - format_date
 - drupal_escape
 - safe_join
