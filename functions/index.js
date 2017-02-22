@@ -6,5 +6,6 @@ module.exports = {
   url: activeTheme,
   file_url: activeTheme,
   active_theme_path: activeTheme,
-  active_theme: activeTheme
+  active_theme: activeTheme,
+  path: activeTheme
 };
