@@ -1,1 +1,1 @@
-module.exports = require('slug')
+module.exports = require('slugg')

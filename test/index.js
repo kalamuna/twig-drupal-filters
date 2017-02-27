@@ -21,7 +21,7 @@ describe('twig-drupal', function(){
       data: '{{ value|clean_class }}'
     });
     var output = template.render({value: 'Hello World!'});
-    assert.equal(output, 'Hello-World');
+    assert.equal(output, 'hello-world');
     done();
   });
 });
