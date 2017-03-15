@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.2
+
+- Fix invalid parameters for `slugg`
+
 ## 0.2.1
 
 - Removed `slugify` dependency
