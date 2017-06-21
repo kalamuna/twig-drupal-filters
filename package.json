@@ -1,10 +1,11 @@
 {
   "name": "twig-drupal-filters",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Drupal's Twig filters, implemented for Twig.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "posttest": "xo --no-esnext --no-semicolon --space --global=it --global=describe"
   },
   "keywords": [
     "Drupal",
@@ -13,10 +14,16 @@
   "author": "Kalamuna (http://kalamuna.com)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^3.2.0"
+    "mocha": "^3.4.2",
+    "xo": "^0.18.2"
   },
   "dependencies": {
-    "slugg": "RobLoach/slugg#631f14d",
-    "twig": "^0.10.3"
+    "slugg": "^1.2.1",
+    "twig": "^1.10.5"
+  },
+  "xo": {
+    "rules": {
+      "unicorn/filename-case": 0
+    }
   }
 }

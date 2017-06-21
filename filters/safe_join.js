@@ -1,5 +1,5 @@
-var Twig = require('twig');
+var twig = require('twig')
 
 module.exports = function () {
-  return Twig.filters.join.apply(null, arguments);
-};
+  return twig.filters.join.apply(null, arguments)
+}

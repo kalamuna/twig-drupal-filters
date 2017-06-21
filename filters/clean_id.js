@@ -1,1 +1,1 @@
-module.exports = require('slugg')
+module.exports = require('./clean_class')

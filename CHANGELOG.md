@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.0
+
+- Fix default seperator for `slugg`
+- Updating coding standards
+
 ## 0.2.2
 
 - Fix invalid parameters for `slugg`
