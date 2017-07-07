@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.0
+
+- Added `link()` function
+
 ## 1.0.0
 
 - Fix default seperator for `slugg`
