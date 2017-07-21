@@ -1,7 +1,6 @@
 var trans = require('./trans')
 
 module.exports = {
-  link: require('./link'),
   t: trans,
   trans: trans,
   placeholder: trans,
