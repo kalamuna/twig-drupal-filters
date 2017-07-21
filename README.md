@@ -36,3 +36,11 @@ A comprehensive list of the filters is [available here](http://www.opin.ca/en/ar
 - format_date
 - drupal_escape
 - safe_join
+
+### Functions
+
+-   link
+-   active_theme*
+-   attach_library*
+
+_*These are dummy functions that don't do anything except keep Twig.js compilation from breaking when these Drupal-specific functions are used in Drupal Twig templates._
