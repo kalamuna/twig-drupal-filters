@@ -4,15 +4,10 @@ module.exports = function (title, url, attributes) {
 
   // Loop through all the given attributes.
   for (let attribute in attributes) {
-    // If it's a string, just output it.
-    if (typeof attributes[attributes] === 'string') {
-      finalAttributes += ' ' + attribute + '="' + attributes[attribute] + '"'
-
-    // Otherwise, allow arrays to concat to strings.
-    } else if (attributes[attribute].join) {
+    // Support arrays in the attributes list (e.g., class).
+    if (Array.isArray(attributes[attribute])) {
       finalAttributes += ' ' + attribute + '="' + attributes[attribute].join(' ') + '"'
-
-    // Otherwise, let them figure it out.
+    // Otherwise, allow toString() to do its thing.
     } else {
       finalAttributes += ' ' + attribute + '="' + attributes[attribute] + '"'
     }
