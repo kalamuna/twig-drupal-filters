@@ -23,7 +23,6 @@ twigDrupal(Twig);
 
 A comprehensive list of the filters is [available here](http://www.opin.ca/en/article/twig-filters-drupal-8).
 
-- link
 - t
 - trans
 - placeholder
