@@ -3,6 +3,7 @@
 ## 2.0.0 - Unreleased
 
 - Removed the `|link()` filter
+  - Use `link()` function instead
 
 ## 1.1.0
 
