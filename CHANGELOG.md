@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.0.0 - Unreleased
+
+- Removed the `|link()` filter
+
 ## 1.1.0
 
 - Added `link()` function
