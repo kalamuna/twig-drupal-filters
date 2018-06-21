@@ -1,9 +1,10 @@
 # Change Log
 
-## 2.0.0 - Unreleased
+## 2.0.0 - 2018-06-21
 
 - Removed the `|link()` filter
   - Use `link()` function instead
+- Updated dependencies
 
 ## 1.1.0
 

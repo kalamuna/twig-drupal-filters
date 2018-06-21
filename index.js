@@ -1,5 +1,7 @@
 /**
  * Adds all the filters to the given Twig intstance.
+ *
+ * @param {Twig} twigInstance The instance of Twig to modify.
  */
 module.exports = function (twigInstance) {
   var filters = require('./filters')
