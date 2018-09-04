@@ -13,7 +13,7 @@ describe('twig-drupal', function () {
       data: '{{ value|clean_class }}'
     })
     var output = template.render({value: 'Hello World!'})
-    assert.equal(output, 'hello-world')
+    assert.strictEqual(output, 'hello-world')
     done()
   })
 
@@ -28,7 +28,7 @@ describe('twig-drupal', function () {
         class: ['foo', 'bar', 'baz']
       }
     })
-    assert.equal(output, 'Visit my <a href="http://example.com" class="foo bar baz">Website</a>!')
+    assert.strictEqual(output, 'Visit my <a href="http://example.com" class="foo bar baz">Website</a>!')
 
     output = template.render({
       title: 'Site',
@@ -37,7 +37,7 @@ describe('twig-drupal', function () {
         class: 'awesome'
       }
     })
-    assert.equal(output, 'Visit my <a href="http://example.com" class="awesome">Site</a>!')
+    assert.strictEqual(output, 'Visit my <a href="http://example.com" class="awesome">Site</a>!')
     done()
   })
 })
