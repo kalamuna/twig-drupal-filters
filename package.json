@@ -14,12 +14,12 @@
   "author": "Kalamuna (http://kalamuna.com)",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^6.0.0",
+    "mocha": "^6.2.0",
     "xo": "^0.24.0"
   },
   "dependencies": {
     "slugg": "^1.2.1",
-    "twig": "^1.12.0"
+    "twig": "^1.13.3"
   },
   "xo": {
     "rules": {

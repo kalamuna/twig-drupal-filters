@@ -1,6 +1,6 @@
 var assert = require('assert')
-var twigFilters = require('..')
 var twigPackage = require('twig')
+var twigFilters = require('..')
 
 var twig = twigPackage.twig
 
