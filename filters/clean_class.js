@@ -94,7 +94,7 @@ function cleanCssIdentifier(identifier, filter) {
   // - ISO 10646 characters U+00A1 and higher
   // We strip out any character not in the above list.
   identifier = identifier.replace(
-    /[^\u{002D}\u{0030}-\u{0039}\u{0041}-\u{005A}\u{005F}\u{0061}-\u{007A}\u{00A1}-\u{FFFF}]/gu,
+    /(?:[\0-,./:-@[-^`{-\u00A0]|[\uD800-\uDBFF][\uDC00-\uDFFF])/g,
     ''
   )
   // Identifiers cannot start with a digit, two hyphens, or a hyphen followed by a digit.
