@@ -4,7 +4,7 @@ module.exports = {
   t: trans,
   trans: trans,
   placeholder: trans,
-  without: trans,
+  without: require('./without'),
   clean_class: require('./clean_class'), // eslint-disable-line camelcase
   clean_id: require('./clean_id'), // eslint-disable-line camelcase
   render: trans,
