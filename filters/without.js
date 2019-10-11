@@ -15,7 +15,10 @@
  *   The filtered renderable array.
  */
 module.exports = function (element) {
-  var filteredElement = Object.assign({}, element)
+  var filteredElement = {}
+  Object.keys(element).forEach(function (key) {
+    filteredElement[key] = element[key]
+  })
 
   var args = Array.prototype.slice.call(arguments, 1)
 
