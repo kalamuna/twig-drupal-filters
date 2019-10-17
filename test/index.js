@@ -45,10 +45,6 @@ describe('twig-drupal', function () {
         expected: '__cssidentifier'
       },
       {
-        data: {value: '__cssidentifier'},
-        expected: '__cssidentifier'
-      },
-      {
         data: {value: 'CLASS NAME_[Ü]'},
         expected: 'class-name--ü'
       }
