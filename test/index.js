@@ -16,34 +16,44 @@ describe('twig-drupal', function () {
    */
   it('should use the clean_class filter', function (done) {
     var tests = [
+      // Verify that no valid ASCII characters are stripped from the identifier.
       {
         data: {value: 'abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789'},
         expected: 'abcdefghijklmnopqrstuvwxyz-abcdefghijklmnopqrstuvwxyz-0123456789'
       },
+      // Verify that valid UTF-8 characters are not stripped from the identifier.
       {
         data: {value: '¡¢£¤¥'},
         expected: '¡¢£¤¥'
       },
+      // Verify that double underscores are not stripped from the identifier.
       {
         data: {value: 'css__identifier__with__double__underscores'},
         expected: 'css__identifier__with__double__underscores'
       },
+      // Verify that invalid characters (including non-breaking space) are
+      // stripped from the identifier.
       {
         data: {value: 'invalid !"#$%&\'()*+,./:;<=>?@[\\]^`{|}~ identifier'},
         expected: 'invalid---identifier'
       },
+      // Verify that an identifier starting with a digit is replaced.
       {
         data: {value: '1cssidentifier'},
         expected: '_cssidentifier'
       },
+      // Verify that an identifier starting with a hyphen followed by a digit is
+      // replaced.
       {
         data: {value: '-1cssidentifier'},
         expected: '__cssidentifier'
       },
+      // Verify that an identifier starting with two hyphens is replaced.
       {
         data: {value: '--cssidentifier'},
         expected: '__cssidentifier'
       },
+      // Verify Drupal coding standards are enforced.
       {
         data: {value: 'CLASS NAME_[Ü]'},
         expected: 'class-name--ü'
