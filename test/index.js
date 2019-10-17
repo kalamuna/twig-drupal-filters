@@ -8,12 +8,64 @@ describe('twig-drupal', function () {
   // Add the Twig Filters to Twig.
   twigFilters(twigPackage)
 
+  /**
+   * Tests the clean_class filter.
+   *
+   * @see \Drupal\Tests\Component\Utility\testCleanCssIdentifier
+   * @see \Drupal\Tests\Component\Utility\testHtmlClass
+   */
   it('should use the clean_class filter', function (done) {
+    var tests = [
+      {
+        data: {value: 'abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789'},
+        expected: 'abcdefghijklmnopqrstuvwxyz-abcdefghijklmnopqrstuvwxyz-0123456789'
+      },
+      {
+        data: {value: '¡¢£¤¥'},
+        expected: '¡¢£¤¥'
+      },
+      {
+        data: {value: 'css__identifier__with__double__underscores'},
+        expected: 'css__identifier__with__double__underscores'
+      },
+      {
+        data: {value: 'invalid !"#$%&\'()*+,./:;<=>?@[\\]^`{|}~ identifier'},
+        expected: 'invalid---identifier'
+      },
+      {
+        data: {value: '1cssidentifier'},
+        expected: '_cssidentifier'
+      },
+      {
+        data: {value: '-1cssidentifier'},
+        expected: '__cssidentifier'
+      },
+      {
+        data: {value: '--cssidentifier'},
+        expected: '__cssidentifier'
+      },
+      {
+        data: {value: '__cssidentifier'},
+        expected: '__cssidentifier'
+      },
+      {
+        data: {value: 'CLASS NAME_[Ü]'},
+        expected: 'class-name--ü'
+      }
+    ]
+
     var template = twig({
       data: '{{ value|clean_class }}'
     })
-    var output = template.render({value: 'Hello World!'})
-    assert.strictEqual(output, 'hello-world')
+
+    var outputs = tests.map(function (test) {
+      return template.render(test.data)
+    })
+
+    outputs.forEach(function (output, index) {
+      assert.strictEqual(output, tests[index].expected)
+    })
+
     done()
   })
 
