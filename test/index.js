@@ -17,6 +17,55 @@ describe('twig-drupal', function () {
     done()
   })
 
+  /**
+   * Tests the clean_id filter.
+   *
+   * @see \Drupal\Tests\Component\Utility\testHtmlGetId
+   */
+  it('should use the clean_id filter', function (done) {
+    var tests = [
+
+      // Verify that letters, digits, and hyphens are not stripped from the ID.
+      {
+        data: {value: 'abcdefghijklmnopqrstuvwxyz-0123456789'},
+        expected: 'abcdefghijklmnopqrstuvwxyz-0123456789'
+      },
+      // Verify that invalid characters are stripped from the ID.
+      {
+        data: {value: 'invalid,./:@\\^`{Üidentifier'},
+        expected: 'invalididentifier'
+      },
+      // Verify Drupal coding standards are enforced.
+      {
+        data: {value: 'ID NAME_[1]'},
+        expected: 'id-name-1'
+      },
+      // Verify that a repeated ID is [not] made unique.
+      {
+        data: {value: 'test-unique-id'},
+        expected: 'test-unique-id'
+      },
+      {
+        data: {value: 'test-unique-id'},
+        expected: 'test-unique-id'
+      }
+    ]
+
+    var template = twig({
+      data: '{{ value|clean_id }}'
+    })
+
+    var outputs = tests.map(function (test) {
+      return template.render(test.data)
+    })
+
+    outputs.forEach(function (output, index) {
+      assert.strictEqual(output, tests[index].expected)
+    })
+
+    done()
+  })
+
   it('should create a link', function (done) {
     var template = twig({
       data: 'Visit my {{ link(title, url, attributes) }}!'
