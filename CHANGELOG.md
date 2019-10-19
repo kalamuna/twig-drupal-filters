@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.0.0 - Unreleased
+
+- [#30](https://github.com/kalamuna/twig-drupal-filters/pull/30) Add actual `clean_id` filter, by [fafnirical](https://github.com/fafnirical)
+
 ## 2.0.0 - 2018-06-21
 
 - Removed the `|link()` filter
