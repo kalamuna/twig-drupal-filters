@@ -1,5 +1,5 @@
 var twig = require('twig')
 
 module.exports = function () {
-  return twig.filters.escape.apply(null, arguments)
+  return Reflect.apply(twig.filters.escape, null, arguments)
 }
