@@ -124,6 +124,38 @@ describe('twig-drupal', function () {
     done()
   })
 
+  /**
+   * Tests the clean_id filter.
+   *
+   * @see \Drupal\Tests\Kernel/Theme/TwigFilterTest
+   */
+  it('should use the without filter', function (done) {
+    // The variables to pass to the templates.
+    const data = {
+      quote: {
+        content: 'You can only find truth with logic if you have already found truth without it.',
+        author: 'Gilbert Keith Chesterton',
+        date: '1874-1936'
+      }
+    }
+
+    // No author
+    let template = twig({
+      data: 'No author: {{ quote|without("author")|join }}'
+    })
+    let output = template.render(data)
+    assert.strictEqual(output, 'No author: You can only find truth with logic if you have already found truth without it.1874-1936')
+
+    // Just author
+    template = twig({
+      data: 'Just author: {{ quote|without("content", "date")|join }}'
+    })
+    output = template.render(data)
+    assert.strictEqual(output, 'Just author: Gilbert Keith Chesterton')
+
+    done()
+  })
+
   it('should create a link', function (done) {
     let template = twig({
       data: 'Visit my {{ link(title, url, attributes) }}!'
