@@ -15,18 +15,16 @@
  *   The filtered renderable array.
  */
 module.exports = function (element) {
-  var filteredElement = {}
-  Object.keys(element).forEach(function (key) {
-    filteredElement[key] = element[key]
-  })
+  let filteredElement = {}
 
-  var args = Array.prototype.slice.call(arguments, 1)
-
-  args.forEach(function (arg) {
-    if (Object.prototype.hasOwnProperty.call(filteredElement, arg)) {
-      delete filteredElement[arg]
+  let args = Array.prototype.slice.call(arguments, 1)
+  if (args[0]) {
+    for (let name of Object.keys(element)) {
+      if (!args[0].includes(name)) {
+        filteredElement[name] = element[name]
+      }
     }
-  })
+  }
 
   return filteredElement
 }

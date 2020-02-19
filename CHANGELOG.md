@@ -1,9 +1,10 @@
 # Change Log
 
-## 3.0.0 - Unreleased
+## 3.0.0 - 2020-02-19
 
 - [#30](https://github.com/kalamuna/twig-drupal-filters/pull/30) Implement actual `clean_id` filter, by [@fafnirical](https://github.com/fafnirical)
-- [#29](https://github.com/kalamuna/twig-drupal-filters/pull/29) Implement actual clean_class filter, by [@fafnirical](https://github.com/fafnirical)
+- [#29](https://github.com/kalamuna/twig-drupal-filters/pull/29) Implement actual `clean_class` filter, by [@fafnirical](https://github.com/fafnirical)
+- [#33](https://github.com/kalamuna/twig-drupal-filters/pull/33) Implement actual `without` filter, by [@fafnirical](https://github.com/fafnirical)
 - Updated dependencies
 
 ## 2.0.0 - 2018-06-21
