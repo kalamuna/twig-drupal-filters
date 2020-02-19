@@ -4,6 +4,7 @@
 
 - [#30](https://github.com/kalamuna/twig-drupal-filters/pull/30) Implement actual `clean_id` filter, by [@fafnirical](https://github.com/fafnirical)
 - [#29](https://github.com/kalamuna/twig-drupal-filters/pull/29) Implement actual clean_class filter, by [@fafnirical](https://github.com/fafnirical)
+- Updated dependencies
 
 ## 2.0.0 - 2018-06-21
 

@@ -1,8 +1,8 @@
-var assert = require('assert')
-var twigPackage = require('twig')
-var twigFilters = require('..')
+const assert = require('assert')
+const twigPackage = require('twig')
+const twigFilters = require('..')
 
-var twig = twigPackage.twig
+const twig = twigPackage.twig
 
 describe('twig-drupal', function () {
   // Add the Twig Filters to Twig.
@@ -15,7 +15,7 @@ describe('twig-drupal', function () {
    * @see \Drupal\Tests\Component\Utility\testHtmlClass
    */
   it('should use the clean_class filter', function (done) {
-    var tests = [
+    let tests = [
       // Verify that no valid ASCII characters are stripped from the identifier.
       {
         data: {value: 'abcdefghijklmnopqrstuvwxyz_ABCDEFGHIJKLMNOPQRSTUVWXYZ-0123456789'},
@@ -60,11 +60,11 @@ describe('twig-drupal', function () {
       }
     ]
 
-    var template = twig({
+    let template = twig({
       data: '{{ value|clean_class }}'
     })
 
-    var outputs = tests.map(function (test) {
+    let outputs = tests.map(function (test) {
       return template.render(test.data)
     })
 
@@ -81,7 +81,7 @@ describe('twig-drupal', function () {
    * @see \Drupal\Tests\Component\Utility\testHtmlGetId
    */
   it('should use the clean_id filter', function (done) {
-    var tests = [
+    let tests = [
 
       // Verify that letters, digits, and hyphens are not stripped from the ID.
       {
@@ -109,11 +109,11 @@ describe('twig-drupal', function () {
       }
     ]
 
-    var template = twig({
+    let template = twig({
       data: '{{ value|clean_id }}'
     })
 
-    var outputs = tests.map(function (test) {
+    let outputs = tests.map(function (test) {
       return template.render(test.data)
     })
 
@@ -125,10 +125,10 @@ describe('twig-drupal', function () {
   })
 
   it('should create a link', function (done) {
-    var template = twig({
+    let template = twig({
       data: 'Visit my {{ link(title, url, attributes) }}!'
     })
-    var output = template.render({
+    let output = template.render({
       title: 'Website',
       url: 'http://example.com',
       attributes: {
