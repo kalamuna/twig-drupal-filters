@@ -15,7 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "^7.0.1",
-    "xo": "^0.26.1"
+    "xo": "^0.27.0"
   },
   "dependencies": {
     "twig": "^1.14.0"
