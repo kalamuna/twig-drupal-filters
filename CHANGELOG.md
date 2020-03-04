@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.1.0 - 2020-03-04
+
+- Update dependencies
+
 ## 3.0.0 - 2020-02-19
 
 - [#30](https://github.com/kalamuna/twig-drupal-filters/pull/30) Implement actual `clean_id` filter, by [@fafnirical](https://github.com/fafnirical)
