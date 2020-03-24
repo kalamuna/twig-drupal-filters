@@ -1,6 +1,6 @@
 # Change Log
 
-## 3.1.0 - 2020-03-24
+## 3.1.1 - 2020-03-24
 
 - Fix cleanid() with invalid args
 
