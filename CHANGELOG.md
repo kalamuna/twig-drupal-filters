@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.1.0 - 2020-03-24
+
+- Fix cleanid() with invalid args
+
 ## 3.1.0 - 2020-03-04
 
 - Update dependencies

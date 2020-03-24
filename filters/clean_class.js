@@ -94,7 +94,7 @@ function cleanCssIdentifier(identifier, filter) {
   // - ISO 10646 characters U+00A1 and higher
   // We strip out any character not in the above list.
   identifier = identifier.replace(
-    /(?:[\0-,./:-@[-^`{-\u00A0]|[\uD800-\uDBFF][\uDC00-\uDFFF])/g,
+    /(?:[\0-,./:-@[-^`{-\u00A0]|[\uD800-\uDBFF][\uDC00-\uDFFF])/g, // eslint-disable-line unicorn/better-regex
     ''
   )
   // Identifiers cannot start with a digit, two hyphens, or a hyphen followed by a digit.
