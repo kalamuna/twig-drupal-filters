@@ -10,6 +10,11 @@
  * @see \Drupal\Component\Utility\Html::getId()
  */
 module.exports = function (id) {
+  // Ensure a valid string is being passed.
+  if (!id || !id.toLowerCase) {
+    return ''
+  }
+
   var filter = {
     ' ': '-',
     _: '-',
@@ -37,7 +42,7 @@ module.exports = function (id) {
   // list. Note that the CSS spec doesn't allow colons or periods in identifiers
   // (http://www.w3.org/TR/CSS21/syndata.html#characters), so we strip those two
   // characters as well.
-  id = id.replace(/[^A-Za-z0-9\-_]/g, '')
+  id = id.replace(/[^A-Za-z0-9\-_]/g, '') // eslint-disable-line unicorn/better-regex
 
   // Removing multiple consecutive hyphens.
   id = id.replace(/-+/g, '-')
