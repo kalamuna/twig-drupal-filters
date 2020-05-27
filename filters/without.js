@@ -1,3 +1,5 @@
+const objectKeys = require('object-keys')
+
 /**
  * Removes child elements from a copy of the original array.
  *
@@ -19,7 +21,7 @@ module.exports = function (element) {
 
   let args = Array.prototype.slice.call(arguments, 1)
   if (args[0]) {
-    for (let name of Object.keys(element)) {
+    for (let name of objectKeys(element)) {
       if (!args[0].includes(name)) {
         filteredElement[name] = element[name]
       }

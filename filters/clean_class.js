@@ -14,9 +14,9 @@
  * @see \Drupal\Component\Utility\Html::getClass()
  */
 module.exports = function (string) {
-  var classes = {}
+  let classes = {}
 
-  var identifier = String(string)
+  let identifier = String(string)
 
   return (function () {
     if (!Object.prototype.hasOwnProperty.call(classes, identifier)) {

@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.1.2 - 2020-05-26
+
+- Switch to `object-keys` for retrieving the object keys in `|without`
+
 ## 3.1.1 - 2020-03-24
 
 - Fix cleanid() with invalid args
