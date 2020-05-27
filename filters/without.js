@@ -19,6 +19,10 @@ const objectKeys = require('object-keys')
 module.exports = function (element) {
   let filteredElement = {}
 
+  if (!element) {
+    return []
+  }
+
   let args = Array.prototype.slice.call(arguments, 1)
   if (args[0]) {
     for (let name of objectKeys(element)) {

@@ -153,6 +153,13 @@ describe('twig-drupal', function () {
     output = template.render(data)
     assert.strictEqual(output, 'Just author: Gilbert Keith Chesterton')
 
+    // No input
+    template = twig({
+      data: 'Just author: {{ nothing|without("content", "date")|join }}'
+    })
+    output = template.render(data)
+    assert.strictEqual(output, 'Just author: ')
+
     done()
   })
 
