@@ -34,7 +34,7 @@ describe('twig-drupal', function () {
       // Verify that invalid characters (including non-breaking space) are
       // stripped from the identifier.
       {
-        data: {value: 'invalid !"#$%&\'()*+,./:;<=>?@[\\]^`{|}~ identifier'}, // eslint-disable-line unicorn/string-content
+        data: {value: 'invalid !"#$%&\'()*+,./:;<=>?@[\\]^`{|}~ identifier'},
         expected: 'invalid---identifier'
       },
       // Verify that an identifier starting with a digit is replaced.
@@ -152,6 +152,13 @@ describe('twig-drupal', function () {
     })
     output = template.render(data)
     assert.strictEqual(output, 'Just author: Gilbert Keith Chesterton')
+
+    // No input
+    template = twig({
+      data: 'Just author: {{ nothing|without("content", "date")|join }}'
+    })
+    output = template.render(data)
+    assert.strictEqual(output, 'Just author: ')
 
     done()
   })
