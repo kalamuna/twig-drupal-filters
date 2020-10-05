@@ -9,7 +9,7 @@ Twig.js implementations of Drupal's Twig functions and filters. Most of these ar
 
 ``` javascript
 var Twig = require('twig')
-var twigDrupal = require('twig-drupal')
+var twigDrupal = require('twig-drupal-filters')
 
 // Add the filters to Drupal.
 twigDrupal(Twig);
