@@ -8,6 +8,10 @@
     "functions",
     "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalamuna/twig-drupal-filters.git"
+  },
   "scripts": {
     "test": "mocha --reporter spec",
     "posttest": "xo --space=2 --no-esnext --no-semicolon --global=it --global=describe"
