@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.0 - 2202-10-28
+
+- Update dependencies
+- [#44](https://github.com/kalamuna/twig-drupal-filters/pull/44) Fix code example documentation, by [@skippednote](https://github.com/skippednote)
+- [#47](https://github.com/kalamuna/twig-drupal-filters/pull/47) Add repository to package.json [@v-zhzhou](https://github.com/v-zhzhou)
+
 ## 3.1.2 - 2020-05-26
 
 - Switch to `object-keys` for retrieving the object keys in `|without`

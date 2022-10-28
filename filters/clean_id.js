@@ -15,11 +15,11 @@ module.exports = function (id) {
     return ''
   }
 
-  var filter = {
+  const filter = {
     ' ': '-',
     _: '-',
     '[': '-',
-    ']': ''
+    ']': '',
   }
 
   id = id.toLowerCase().replace(
@@ -29,11 +29,11 @@ module.exports = function (id) {
           return `(${value.replace(/[\\?*+|.^${}[\]()]/g, '\\$&')})`
         })
         .join('|'),
-      'g'
+      'g',
     ),
     function (substring) {
       return filter[substring]
-    }
+    },
   )
 
   // As defined in http://www.w3.org/TR/html4/types.html#type-name, HTML IDs can

@@ -1,4 +1,4 @@
-var trans = require('./trans')
+const trans = require('./trans')
 
 module.exports = {
   t: trans,
@@ -10,5 +10,5 @@ module.exports = {
   render: trans,
   format_date: trans, // eslint-disable-line camelcase
   drupal_escape: require('./drupal_escape'), // eslint-disable-line camelcase
-  safe_join: require('./safe_join') // eslint-disable-line camelcase
+  safe_join: require('./safe_join'), // eslint-disable-line camelcase
 }

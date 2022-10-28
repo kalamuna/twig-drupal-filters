@@ -4,12 +4,9 @@ module.exports = function (title, url, attributes) {
 
   // Loop through all the given attributes.
   for (let attribute in attributes) {
-    // Support arrays in the attributes list (e.g., class).
-    if (Array.isArray(attributes[attribute])) {
-      finalAttributes += ' ' + attribute + '="' + attributes[attribute].join(' ') + '"'
-    // Otherwise, allow toString() to do its thing.
-    } else {
-      finalAttributes += ' ' + attribute + '="' + attributes[attribute] + '"'
+    if (Object.prototype.hasOwnProperty.call(attributes, attribute)) {
+      // Support arrays in the attributes list (e.g., class), or the object's toString().
+      finalAttributes += ' ' + attribute + '="' + (Array.isArray(attributes[attribute]) ? attributes[attribute].join(' ') : attributes[attribute]) + '"'
     }
   }
 

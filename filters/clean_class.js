@@ -52,13 +52,13 @@ function cleanCssIdentifier(identifier, filter) {
       _: '-',
       '/': '-',
       '[': '-',
-      ']': ''
+      ']': '',
     }
   }
 
   // In order to keep '__' to stay '__' we first replace it with a different
   // placeholder after checking that it is not defined as a filter.
-  var doubleUnderscoreReplacements = 0
+  let doubleUnderscoreReplacements = 0
   if (!Object.prototype.hasOwnProperty.call(filter, '__')) {
     identifier = identifier.replace(/__/g, function () {
       doubleUnderscoreReplacements += 1
@@ -73,11 +73,11 @@ function cleanCssIdentifier(identifier, filter) {
           return '(' + value.replace(/[\\?*+|.^${}[\]()]/g, '\\$&') + ')'
         })
         .join('|'),
-      'g'
+      'g',
     ),
     function (substring) {
       return filter[substring]
-    }
+    },
   )
   // Replace temporary placeholder '##' with '__' only if the original
   // identifier contained '__'.
@@ -95,7 +95,7 @@ function cleanCssIdentifier(identifier, filter) {
   // We strip out any character not in the above list.
   identifier = identifier.replace(
     /(?:[\0-,./:-@[-^`{-\u00A0]|[\uD800-\uDBFF][\uDC00-\uDFFF])/g, // eslint-disable-line unicorn/better-regex
-    ''
+    '',
   )
   // Identifiers cannot start with a digit, two hyphens, or a hyphen followed by a digit.
   // N.b.: This doesn't match the logic from core exactly, but the result is the same.

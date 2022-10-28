@@ -1,4 +1,4 @@
-var activeTheme = require('./active_theme')
+const activeTheme = require('./active_theme')
 const link = require('./link')
 
 module.exports = {
@@ -9,5 +9,5 @@ module.exports = {
   active_theme_path: activeTheme, // eslint-disable-line camelcase
   active_theme: activeTheme, // eslint-disable-line camelcase
   path: activeTheme,
-  link: link
+  link: link,
 }
