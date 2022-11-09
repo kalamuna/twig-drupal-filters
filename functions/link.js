@@ -10,6 +10,10 @@ module.exports = function (title, url, attributes) {
     }
   }
 
+  if (url === '<nolink>') {
+    return '<span' + finalAttributes + '>' + title + '</span>';
+  }
+
   // Construct the link.
   return '<a href="' + url + '"' + finalAttributes + '>' + title + '</a>'
 }

@@ -186,4 +186,19 @@ describe('twig-drupal', function () {
     assert.strictEqual(output, 'Visit my <a href="http://example.com" class="awesome">Site</a>!')
     done()
   })
+
+  it('should create a span when link url is <nolink>', function (done) {
+    let template = twig({
+      data: 'Visit my {{ link(title, url, attributes) }}!',
+    })
+    let output = template.render({
+      title: 'Website',
+      url: '<nolink>',
+      attributes: {
+        class: ['foo', 'bar', 'baz'],
+      },
+    })
+    assert.strictEqual(output, 'Visit my <span class="foo bar baz">Website</span>!')
+    done()
+  })
 })
