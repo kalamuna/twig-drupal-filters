@@ -4,7 +4,7 @@ module.exports = function (title, url, attributes) {
 
   // Loop through all the given attributes.
   for (let attribute in attributes) {
-    if (Object.prototype.hasOwnProperty.call(attributes, attribute) && attributes[attribute]) {
+    if (Object.prototype.hasOwnProperty.call(attributes, attribute) && attributes[attribute] && attribute !== '_keys') {
       // Support arrays in the attributes list (e.g., class), or the object's toString().
       finalAttributes += ' ' + attribute + '="' + (Array.isArray(attributes[attribute]) ? attributes[attribute].join(' ') : attributes[attribute]) + '"'
     }
